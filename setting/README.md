@@ -43,5 +43,6 @@ INSERT INTO MEMBER_TBL_02 VALUES(100006, '차공단', '010-1111-7777', '제주�
 ---
 ### join.jsp, join_p.jsp, memberlist.jsp 생성
 ![image](https://github.com/hwan06/shoppingmall/assets/114748934/24d6d808-c94f-48f9-b95e-f5187b6f50f0)   
-[join](
+[join](https://github.com/hwan06/shoppingmall/blob/main/src/main/webapp/join.jsp)   
+[join_p](
 
