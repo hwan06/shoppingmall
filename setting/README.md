@@ -46,4 +46,31 @@ INSERT INTO MEMBER_TBL_02 VALUES(100006, '차공단', '010-1111-7777', '제주�
 [join](https://github.com/hwan06/shoppingmall/blob/main/src/main/webapp/join.jsp),
 [join_p](https://github.com/hwan06/shoppingmall/blob/main/src/main/webapp/join_p.jsp),
 [memberlist](https://github.com/hwan06/shoppingmall/blob/main/src/main/webapp/memberlist.jsp)
-
+---
+## join.jsp, join_p.jsp, memberlist.jsp에서 주요코드
+스크립틀릿에서 DB연결 및 SQL문을 실행하여 num에 값 불러오기
+```java
+<@% page import = "DB.DBConnect" %> <!-- DB connect -->
+<%@ page import = "java.sql.*" %> <!-- SQL import -->
+<%
+	String sql = "select max(custno) from member_tbl_02";
+	
+	//DB 연결 기능을 객체변수 conn 에 저장 -> 1.DB 연결
+	Connection conn = DBconnect.getConnection();
+	
+	// sql변수에 저장되어 있는 문장이 쿼리문이 됨 -> 2. DB 연결 후 쿼리문이 생성
+	// PreparedStatement <- 쿼리문 형식으로 변환 해준다.
+	PreparedStatement pstmt = conn.prepareStatement(sql);
+	
+	// 변수 pstmt에 저장되어 있는 SQL문을 실행하여 객체 변수 rs에 저장
+	// 쿼리문 결과값을 받아온다.
+	ResultSet rs = pstmt.executeQuery();
+	
+	// 기준이 되는 변수에 결과값이 저장되어 있는 경우 next()를 호출하여 마지막 값을 확인
+	// 결과값이 없을 경우엔 실행 하지 않아도 됨.
+	rs.next();
+	
+	int num = rs.getInt(1) + 1;
+	
+%>
+```
