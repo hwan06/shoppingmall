@@ -35,9 +35,13 @@ INSERT INTO MEMBER_TBL_02 VALUES(100006, '차공단', '010-1111-7777', '제주�
 [footer](https://github.com/hwan06/shoppingmall/blob/main/src/main/webapp/layout/footer.jsp),
 [css](https://github.com/hwan06/shoppingmall/blob/main/src/main/webapp/css/style.css)   
 
-
 ---
 ### DB연결 클래스파일 생성 후, DB연결하기
 ![image](https://github.com/hwan06/shoppingmall/assets/114748934/735f0509-9b84-43d5-a73c-9d95e1c0f164)   
 [DB연결코드](https://github.com/hwan06/shoppingmall/blob/main/src/main/java/DB/DBconnect.java)
+
+---
+### join.jsp, join_p.jsp, memberlist.jsp 생성
+![image](https://github.com/hwan06/shoppingmall/assets/114748934/24d6d808-c94f-48f9-b95e-f5187b6f50f0)   
+[join](
 
