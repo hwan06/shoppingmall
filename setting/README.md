@@ -37,5 +37,5 @@ INSERT INTO MEMBER_TBL_02 VALUES(100006, '차공단', '010-1111-7777', '제주�
 ---
 ### DB연결 클래스파일 생성 후, DB연결하기
 ![image](https://github.com/hwan06/shoppingmall/assets/114748934/735f0509-9b84-43d5-a73c-9d95e1c0f164)
-### [DB연결 코드](https://github.com/hwan06/shoppingmall/blob/main/src/main/java/DB/DBconnect.java)
+[DB연결 코드](https://github.com/hwan06/shoppingmall/blob/main/src/main/java/DB/DBconnect.java)
 
