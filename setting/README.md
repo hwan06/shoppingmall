@@ -26,5 +26,5 @@ INSERT INTO MEMBER_TBL_02 VALUES(100005, '진평화', '010-1111-6666', '제주�
 INSERT INTO MEMBER_TBL_02 VALUES(100006, '차공단', '010-1111-7777', '제주도 제주시 감나무골', '20151211', 'C', '60');
 ```
 ---
-### index.jsp, layout(header, nav, section, footer), css(style) 생성 (코드는 파일에)
+### index.jsp, join.jsp, join_p.jsp, memberlist.jsp, layout(header, nav, section, footer), css(style) 생성
 ![image](https://github.com/hwan06/shoppingmall/assets/114748934/f258c5e2-5132-4ad8-a358-8cc17c61473c)
