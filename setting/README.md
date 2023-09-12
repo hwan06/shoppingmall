@@ -6,7 +6,7 @@
 ![image](https://github.com/hwan06/shoppingmall/assets/114748934/3a3ac7d2-d9cc-49bd-af1f-c6a5419ffb96)
 ---
 
-### 테이블 생성하고 데이터 삽입하기 (전체 코드는 파일에)
+### 테이블 생성하고 데이터 삽입하기 ![전체코드](https://github.com/hwan06/shoppingmall/blob/main/setting/Oracle.sql)
 ``` sql
 DROP TABLE member_tbl_02;
 CREATE TABLE member_tbl_02(
