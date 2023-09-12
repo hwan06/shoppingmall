@@ -26,15 +26,18 @@ INSERT INTO MEMBER_TBL_02 VALUES(100005, '진평화', '010-1111-6666', '제주�
 INSERT INTO MEMBER_TBL_02 VALUES(100006, '차공단', '010-1111-7777', '제주도 제주시 감나무골', '20151211', 'C', '60');
 ```
 ---
-### index.jsp, layout(header, nav, section, footer), css(style) 파일 생성 <- 이 파일들은 기본적인 쇼핑몰 화면임
+### index.jsp, layout(header, nav, section, footer), css(style) 파일 생성 (기본적인 쇼핑몰 홈화면)
 ![image](https://github.com/hwan06/shoppingmall/assets/114748934/17eda7bd-05c0-4953-9dff-a58bcb7333c5)   
 [index](https://github.com/hwan06/shoppingmall/blob/main/src/main/webapp/index.jsp),
 [header](https://github.com/hwan06/shoppingmall/blob/main/src/main/webapp/layout/header.jsp),
 [nav](https://github.com/hwan06/shoppingmall/blob/main/src/main/webapp/layout/nav.jsp),
 [section](https://github.com/hwan06/shoppingmall/blob/main/src/main/webapp/layout/section.jsp),
 [footer](https://github.com/hwan06/shoppingmall/blob/main/src/main/webapp/layout/footer.jsp),
-[css](https://github.com/hwan06/shoppingmall/blob/main/src/main/webapp/css/style.css)
+[css](https://github.com/hwan06/shoppingmall/blob/main/src/main/webapp/css/style.css)   
+
+
 ---
 ### DB연결 클래스파일 생성 후, DB연결하기
 ![image](https://github.com/hwan06/shoppingmall/assets/114748934/735f0509-9b84-43d5-a73c-9d95e1c0f164)   
-### [DB연결코드](https://github.com/hwan06/shoppingmall/blob/main/src/main/java/DB/DBconnect.java)
+[DB연결코드](https://github.com/hwan06/shoppingmall/blob/main/src/main/java/DB/DBconnect.java)
+
