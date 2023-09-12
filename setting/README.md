@@ -4,7 +4,7 @@
 3. Oracle 연결
 4. (ojdbc6.jar import)    
 ![image](https://github.com/hwan06/shoppingmall/assets/114748934/3a3ac7d2-d9cc-49bd-af1f-c6a5419ffb96)
-
+---
 
 ### 테이블 생성하고 데이터 삽입하기 (전체 코드는 파일에)
 ``` sql
@@ -25,6 +25,6 @@ INSERT INTO MEMBER_TBL_02 VALUES(100004, '최사랑', '010-1111-5555', '울릉�
 INSERT INTO MEMBER_TBL_02 VALUES(100005, '진평화', '010-1111-6666', '제주도 제주시 외나무골', '20151225', 'B', '60');
 INSERT INTO MEMBER_TBL_02 VALUES(100006, '차공단', '010-1111-7777', '제주도 제주시 감나무골', '20151211', 'C', '60');
 ```
-
+---
 ### index.jsp, layout(header, nav, section, footer), css(style) 생성 (코드는 파일에)
 ![image](https://github.com/hwan06/shoppingmall/assets/114748934/f258c5e2-5132-4ad8-a358-8cc17c61473c)
