@@ -38,7 +38,6 @@ INSERT INTO MEMBER_TBL_02 VALUES(100006, '차공단', '010-1111-7777', '제주�
 ---
 ### DB연결 클래스파일 생성 후, DB연결하기
 ![image](https://github.com/hwan06/shoppingmall/assets/114748934/735f0509-9b84-43d5-a73c-9d95e1c0f164)   
-[DB연결코드](https://github.com/hwan06/shoppingmall/blob/main/src/main/java/DB/DBconnect.java)
 
 ---
 ### 밑에보이는 사진의 파일들을 생성한다.
@@ -142,7 +141,7 @@ select문을 이용하여 사용자의 모든 정보와 문제에 기재되어 �
 </script>
 ```
 
-## member_search_list.jsp의 주요코드
+## [member_search_list.jsp](https://github.com/hwan06/shoppingmall/blob/main/src/main/webapp/member_search_list.jsp)의 주요코드
 member_search.jsp에서 입력받은 회원번호를 이용하여 그 회원의 정보를 검색하는 코드
 ```java
 <% 
