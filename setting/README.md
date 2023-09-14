@@ -127,7 +127,7 @@ select문을 이용하여 사용자의 모든 정보와 문제에 기재되어 �
         <%} %>
 ```
 ---
-## member_search.jsp의 주요코드
+## [member_search.jsp](https://github.com/hwan06/shoppingmall/blob/main/src/main/webapp/member_search.jsp)의 주요코드
 유효성 검사. 회원번호 입력칸이 비어있으면 포커스를 옮기고 경고창 띄우는 코드
 ```js
 <script type="text/javascript">
