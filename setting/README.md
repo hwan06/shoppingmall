@@ -47,8 +47,8 @@ INSERT INTO MEMBER_TBL_02 VALUES(100006, '차공단', '010-1111-7777', '제주�
 [join_p](https://github.com/hwan06/shoppingmall/blob/main/src/main/webapp/join_p.jsp),
 [memberlist](https://github.com/hwan06/shoppingmall/blob/main/src/main/webapp/memberlist.jsp)
 ---
-## join.jsp, join_p.jsp, memberlist.jsp에서 주요코드
-스크립틀릿에서 DB연결 및 SQL문을 실행하여 num에 값 불러오기
+## join.jsp의 주요코드
+스크립틀릿에서 DB연결 및 SQL문을 실행하여 num에 값을 불러오는 코드
 ```java
 <@% page import = "DB.DBConnect" %> <!-- DB connect -->
 <%@ page import = "java.sql.*" %> <!-- SQL import -->
@@ -73,4 +73,57 @@ INSERT INTO MEMBER_TBL_02 VALUES(100006, '차공단', '010-1111-7777', '제주�
 	int num = rs.getInt(1) + 1;
 	
 %>
+```
+---
+## join_p.jsp의 주요코드
+DB에 insert 문을 이용하여 회원정보를 저장하는코드
+```java
+<%
+	// 오라클에 한글 입력시 깨지지 않음
+	request.setCharacterEncoding("UTF-8");
+	String sql = "insert into member_tbl_02 values(?, ?, ?, ?, ?, ?, ?)";
+	Connection conn = DBconnect.getConnection();
+	PreparedStatement ps = conn.prepareStatement(sql);
+	
+	// 웹 브라우저에서 불러오는 데이터는 문자열 형식으로 인식되므로, 
+	// 숫자 데이터면 형변환 *Integer.parseInt() 메서드를 이용해야 한다.
+	ps.setInt(1, Integer.parseInt(request.getParameter("custno")));
+	ps.setString(2, request.getParameter("custname"));
+	ps.setString(3, request.getParameter("phone"));
+	ps.setString(4, request.getParameter("address"));
+	ps.setString(5, request.getParameter("joindate"));
+	ps.setString(6, request.getParameter("grade"));
+	ps.setString(7, request.getParameter("city"));
+	
+	// 데이터베이스 질의문을 실행하여 데이터 변경 작업을 수행하고 그 결과를 알려주는 역할을 한다
+	ps.executeUpdate();// 쿼리문을 실행하고, 순서대로 member_tbl_02에 기록
+%>
+```
+---
+## memberlist.jsp의 주요코드
+select문을 이용하여 사용자의 모든 정보와 문제에 기재되어 있는 형식에 따라 데이터 출력하는 코드
+```java
+<%
+	Connection conn = DBconnect.getConnection();
+	String sql = "select custno, custname, phone, address, to_char(joindate, 'yyyy-mm-dd') as joindate,"
+			+ " case when grade = 'A' then 'VIP' when grade = 'B' then '일반' else '직원' end as grade,"
+			+ " city from member_tbl_02"
+			+ " order by custno";
+	PreparedStatement ps = conn.prepareStatement(sql);
+	ResultSet rs = ps.executeQuery();
+%>
+```
+스크립틀릿을 이용하여 while문을 사용한다. rs에 값이 있는동안 테이블에 데이터 삽입
+```java
+<% while(rs.next()) { %>
+        <tr class="center">
+        	<td><%=rs.getString("custno") %></td>
+        	<td><%=rs.getString("custname") %></td>
+        	<td><%=rs.getString("phone") %></td>
+        	<td><%=rs.getString("address") %></td>
+        	<td><%=rs.getString("joindate") %></td>
+        	<td><%=rs.getString("grade") %></td>
+        	<td><%=rs.getString("city") %></td>
+        </tr>
+        <%} %>
 ```
