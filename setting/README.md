@@ -127,3 +127,71 @@ select문을 이용하여 사용자의 모든 정보와 문제에 기재되어 �
         </tr>
         <%} %>
 ```
+---
+## member_search.jsp의 주요코드
+유효성 검사. 회원번호 입력칸이 비어있으면 포커스를 옮기고 경고창 띄우는 코드
+```js
+<script type="text/javascript">
+	function check() {
+		if(!document.data.custno.value) {
+			data.custno.focus();
+			alert("회원번호를 입력하세요.");
+			return false;
+		}
+		return true;
+	}
+</script>
+```
+
+## member_search_list.jsp의 주요코드
+member_search.jsp에서 입력받은 회원번호를 이용하여 그 회원의 정보를 검색하는 코드
+```java
+<% 
+Connection conn = DBconnect.getConnection();
+String sql = "select custno, custname, phone, address, to_char(joindate, 'yyyy-mm-dd') as joindate,"
+		+ " case when grade = 'A' then 'VIP' when grade = 'B' then '일반' else '직원' end as grade,"
+		+ " city from member_tbl_02"
+		+ " where custno=?"
+		+ " order by custno";
+PreparedStatement ps = conn.prepareStatement(sql);
+ps.setString(1, request.getParameter("custno"));
+ResultSet rs = ps.executeQuery();
+
+int num = Integer.parseInt(request.getParameter("custno"));
+%>	
+```
+만약에 rs에 값이 있다면 검색한 회원 정보를 테이블 형태로 나타내주는 코드
+```html
+<% if(rs.next()) { %>
+		<table class = "table_style">
+        <tr>
+            <th>회원번호</th>
+            <th>회원성명</th>
+            <th>전화번호</th>
+            <th>주소</th>
+            <th>가입일자</th>
+            <th>고객등급</th>
+            <th>거주지역</th>
+        </tr>
+        
+        <tr class="center">
+        	<td><%=rs.getString("custno") %></td>
+        	<td><%=rs.getString("custname") %></td>
+        	<td><%=rs.getString("phone") %></td>
+        	<td><%=rs.getString("address") %></td>
+        	<td><%=rs.getString("joindate") %></td>
+        	<td><%=rs.getString("grade") %></td>
+        	<td><%=rs.getString("city") %></td>
+        </tr>
+        <tr class="center" >
+        	<td colspan="7"><input type="button" value="다시조회" onclick="location.href='member_search.jsp'"></td>
+        </tr>
+        <%} %>
+```
+rs에 값이 없다면 "입력한 회원번호의 검색결과가 없습니다." 띄워주는 코드
+```java
+<%else { %>
+	<p align="center">회원번호 <%=num %>의 검색결과가 없습니다.</p>
+	<p align="center"><input type="button" value="다시조회" onclick="location.href='member_search.jsp'"></p>
+        <%} %>
+```
