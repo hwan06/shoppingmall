@@ -41,13 +41,12 @@ INSERT INTO MEMBER_TBL_02 VALUES(100006, '차공단', '010-1111-7777', '제주�
 [DB연결코드](https://github.com/hwan06/shoppingmall/blob/main/src/main/java/DB/DBconnect.java)
 
 ---
-### join.jsp, join_p.jsp, memberlist.jsp 생성
-![image](https://github.com/hwan06/shoppingmall/assets/114748934/24d6d808-c94f-48f9-b95e-f5187b6f50f0)   
-[join](https://github.com/hwan06/shoppingmall/blob/main/src/main/webapp/join.jsp),
-[join_p](https://github.com/hwan06/shoppingmall/blob/main/src/main/webapp/join_p.jsp),
+### 밑에보이는 사진의 파일들을 생성한다.
+![image](https://github.com/hwan06/shoppingmall/assets/114748934/0df1e6df-9096-4766-b5e7-b8e31edd338f)
 [memberlist](https://github.com/hwan06/shoppingmall/blob/main/src/main/webapp/memberlist.jsp)
+
 ---
-## join.jsp의 주요코드
+## [join.jsp](https://github.com/hwan06/shoppingmall/blob/main/src/main/webapp/join.jsp)의 주요코드
 스크립틀릿에서 DB연결 및 SQL문을 실행하여 num에 값을 불러오는 코드
 ```java
 <@% page import = "DB.DBConnect" %> <!-- DB connect -->
@@ -75,7 +74,7 @@ INSERT INTO MEMBER_TBL_02 VALUES(100006, '차공단', '010-1111-7777', '제주�
 %>
 ```
 ---
-## join_p.jsp의 주요코드
+## [join_p.jsp](https://github.com/hwan06/shoppingmall/blob/main/src/main/webapp/join_p.jsp)의 주요코드
 DB에 insert 문을 이용하여 회원정보를 저장하는코드
 ```java
 <%
@@ -100,7 +99,7 @@ DB에 insert 문을 이용하여 회원정보를 저장하는코드
 %>
 ```
 ---
-## memberlist.jsp의 주요코드
+## [memberlist.jsp](https://github.com/hwan06/shoppingmall/blob/main/src/main/webapp/memberlist.jsp)의 주요코드
 select문을 이용하여 사용자의 모든 정보와 문제에 기재되어 있는 형식에 따라 데이터 출력하는 코드
 ```java
 <%
