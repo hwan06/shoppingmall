@@ -43,7 +43,6 @@ INSERT INTO MEMBER_TBL_02 VALUES(100006, '차공단', '010-1111-7777', '제주�
 ---
 ### 밑에보이는 사진의 파일들을 생성한다.
 ![image](https://github.com/hwan06/shoppingmall/assets/114748934/0df1e6df-9096-4766-b5e7-b8e31edd338f)
-[memberlist](https://github.com/hwan06/shoppingmall/blob/main/src/main/webapp/memberlist.jsp)
 
 ---
 ## [join.jsp](https://github.com/hwan06/shoppingmall/blob/main/src/main/webapp/join.jsp)의 주요코드
