@@ -161,3 +161,50 @@
         <%} %>
 ```
 
+---
+## 회원매출 조회 화면
+![image](https://github.com/hwan06/shoppingmall/assets/114748934/29921cd3-f8f2-4a6c-89ce-56c260946256)   
+#### SELECT문을 이용하여 PRICE값이 있는 회원의 정보만 출력하는 SQL문을 작성해주고, 총합을 저장할 변수방 total을 선언해준다.
+```sql
+<%
+	Connection conn = DBconnect.getConnection();
+	String sql="select mem.custno, mem.custname, case when grade='A' then 'VIP' when grade='B' then '일반' else '직원' end as grade, sum(mon.price) "
+			+ " from member_tbl_02 mem, money_tbl_02 mon "
+			+ " where mem.custno = mon.custno and price is not null "
+			+ " group by mem.custno, mem.custname, mem.grade "
+			+ " order by sum(mon.price) desc";
+	PreparedStatement ps = conn.prepareStatement(sql);
+	ResultSet rs = ps.executeQuery();
+
+	int total = 0;
+%>
+```
+#### while문을 이용하여 테이블에 조회된 정보를 출력하고 total에 PRICE의 총액을 저장하고 출력해준다.
+```sql
+ <table class = "table_style">
+        <tr>
+            <th>회원번호</th>
+            <th>회원성명</th>
+            <th>고객등급</th>
+            <th>매출</th>
+            
+        </tr>
+        
+        <% while(rs.next()) { %>
+        <tr class="center">
+        	<td><%=rs.getString("custno") %></td>
+        	<td><%=rs.getString("custname") %></td>
+        	<td><%=rs.getString("grade") %></td>
+        	<td><%=rs.getString("sum(mon.price)") %></td>
+        	<%total += rs.getInt("sum(mon.price)"); %>
+        </tr>
+        
+        <%} %>
+        <tr>
+        	<th colspan="3">총합</th>
+        	<td><%=total %></td>
+        </tr>
+        
+    </table>
+```
+
