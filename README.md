@@ -1,9 +1,9 @@
-## 쇼핑몰 실제 화면
-### 홈 화면   
+# 쇼핑몰 실제 화면
+## 홈 화면   
 ![image](https://github.com/hwan06/shoppingmall/assets/114748934/1df2ef8b-ab8c-4258-8408-d90a851e9a17)   
 
 ---
-### 회원등록 화면
+## 회원등록 화면
 ![image](https://github.com/hwan06/shoppingmall/assets/114748934/fffaabdb-5e01-44f2-93f2-756cabe22351)   
 #### 스크립틀릿에서 DB연결 및 SQL문을 실행하여 num에 값을 저장하여 회원번호칸을 자동으로 채워주는 코드
 ```java
@@ -31,7 +31,7 @@
 	
 %>
 ```
-### 회원등록 sql문
+## 회원등록 sql문
 #### DB에 insert 문을 이용하여 회원정보를 저장하는코드
 ```java
 <%
@@ -56,7 +56,7 @@
 %>
 ```
 ---
-### 회원목록조회/수정 화면
+## 회원목록조회/수정 화면
 ![image](https://github.com/hwan06/shoppingmall/assets/114748934/bf9befbc-9a20-444f-bdb0-624b16a2c962)    
 #### select문을 이용하여 사용자의 모든 정보검색 결과를 rs에 저장한다.
 ```java
@@ -86,7 +86,7 @@
 ```
 
 ---
-### 회원조회 화면
+## 회원조회 화면
 ![image](https://github.com/hwan06/shoppingmall/assets/114748934/3e86b777-03c4-4180-b8df-faaa58ceaaf5)    
 #### 유효성 검사. 회원번호 입력칸이 비어있으면 포커스를 옮기고 경고창 띄우는 코드
 ```js
@@ -120,7 +120,7 @@
 ```
 
 ---
-### 회원조회 성공했을 경우의 화면
+## 회원조회 성공했을 경우의 화면
 ![image](https://github.com/hwan06/shoppingmall/assets/114748934/c18003a0-6aa3-4c51-a7f6-194dfe39cbce)     
 #### if문을 활용하여 rs에 값있다면(조회된 값이 있다면) 테이블에 입력된 회원번호의 정보를 출력해준다.
 ```html
@@ -151,7 +151,7 @@
         <%} %>
 ```
 
-### 회원조회 실패했을 경우의 화면
+## 회원조회 실패했을 경우의 화면
 ![image](https://github.com/hwan06/shoppingmall/assets/114748934/f267803e-5c2b-4505-82b3-2eab932b74a9)    
 #### rs에 값이 없다면 위에서 저장해둔 num을 이용하여 "회원번호 <%=num %>의 검색결과가 없습니다."를 출력해준다.
 ```java
